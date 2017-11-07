@@ -1,0 +1,157 @@
+package com.example.apps;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+import org.json.JSONException;
+
+import com.bizideal.smarthometest.lib.Json_data;
+import com.bizideal.smarthometest.lib.SocketThread;
+import com.bizideal.smarthometest.lib.Updata_activity;
+import com.bizideal.smarthometest.lib.json_dispose;
+
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+
+	Button open, close, stop, exit;
+	TextView ill, as;
+	json_dispose js;
+	Thread updateThread;
+	double a;
+	private boolean flag;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		js = new json_dispose();
+		
+		flag = true;
+		ill = (TextView) findViewById(R.id.ill);
+		stop = (Button) findViewById(R.id.stop);
+		close = (Button) findViewById(R.id.close);
+		open = (Button) findViewById(R.id.open);
+
+		SocketThread.SocketIp = "10.1.3.2";
+		SocketThread.Port = 6006;
+		SocketThread.mHandlerSocketState = new Handler();
+		Updata_activity.updatahandler = new Handler(){
+			@Override
+			public void handleMessage(Message msg) {
+				// TODO Auto-generated method stub
+				super.handleMessage(msg);
+				js.receive();
+				try {
+					ill.setText(js.receive_data.get(Json_data.Illumination).toString());
+
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+			}
+		};
+		SocketThread.mHandlerSocketState = new Handler(){
+			@Override
+			public void handleMessage(Message msg) {
+				super.handleMessage(msg);
+				
+				Bundle b = msg.getData();
+				if(flag){
+					if (b.get("SocketThread_State") == "error") {
+						Toast.makeText(MainActivity.this, "组网失败", Toast.LENGTH_SHORT).show();
+					}else {
+						Toast.makeText(MainActivity.this, "组网成功", Toast.LENGTH_SHORT).show();
+					}
+					flag = false;
+				}
+			}
+		};
+		updateThread = new Thread(new Updata_activity());
+		updateThread.start();
+		
+		open.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				js.control(Json_data.Curtain, 0, 0);
+				
+			}
+		});
+		
+		stop.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				js.control(Json_data.Curtain, 0, 2);
+				
+			}
+		});
+		
+		close.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				js.control(Json_data.Curtain, 0, 3);
+				
+			}
+		});
+		
+		
+		
+		final Timer timer = new Timer();  
+		TimerTask task;  
+		final Handler handler = new Handler() {  
+		    @Override 
+		    public void handleMessage(Message msg) {  
+		        // TODO Auto-generated method stub 
+		    	js.receive();
+		        try {
+					a = js.receive_data.getDouble(Json_data.Illumination);
+					if (a < 20) {
+						js.control(Json_data.Lamp, 0, 0x0f);
+						Toast.makeText(MainActivity.this, "???!!!?!?!??@", Toast.LENGTH_SHORT).show();
+					} else {
+						js.control(Json_data.Lamp, 0, 0);
+					}
+				} catch (Exception e) {
+					// TODO: handle exception
+				}// 要做的事情  
+		        super.handleMessage(msg);  
+		    } 
+		};
+		
+		
+		task = new TimerTask() {  
+		    @Override 
+		    public void run() {  
+		        // TODO Auto-generated method stub  
+		        Message message = new Message();  
+		        message.what = 1;  
+		        handler.sendMessage(message);  
+		    }  
+		};
+		
+		
+		timer.schedule(task, 2000, 2000);
+
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.activity_main, menu);
+		return true;
+	}
+
+}
