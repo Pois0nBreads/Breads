@@ -1,8 +1,8 @@
 {
-	"last_version":"V1.0",
-	"version_code":"1.0",
-	"update_date":"2020-03-30 12\:49",
-	"update_url":"https://github.com/Pois0nBreads/UnYoungModel4Bili/releases/download/v1.0/net.pois0nbread.unyoungmodel4bili.-.V1.0.Beta.apk",
-	"update_text":"没有内容",
+	"last_version":"V1.1",
+	"version_code":"1.1",
+	"update_date":"2020-03-30 20\:42",
+	"update_url":"https://github.com/Pois0nBreads/UnYoungModel4Bili/releases/download/v1.1/net.pois0nbread.unyoungmodel4bili_V1.1_Beta.apk",
+	"update_text":"修复了配置储存和设置按钮跳转错误的问题 XD",
 	"version_type":"beta"
 }
