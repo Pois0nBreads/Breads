@@ -1,17 +1,22 @@
 {
-	"last_version":"V2.1",
-	"version_code":"2.1",
-	"update_date":"2020-04-19",
-	"update_url":"https://github.com/Pois0nBreads/UnYoungModel4Bili/releases/download/v1.1/net.pois0nbread.unyoungmodel4bili_V1.1_Beta.apk",
-	"update_text":"修复了配置储存和设置按钮跳转错误的问题 （因为涉及配置储存 建议更新后清除插件数据）XD",
-	"version_type":"beta",
-	"downloadURLs":[
-		{
-			"download_Info":"蓝奏云(推荐)",
-			"download_URL":"https://lanzous.com/iagz3sh"
-		},{
-			"download_Info":"GitHub",
-			"download_URL":"https://github.com/Pois0nBreads/UnYoungModel4Bili/releases/download/v1.1/net.pois0nbread.unyoungmodel4bili_V1.1_Beta.apk"
-		}
-	]
+    "last_version": "V2.1",
+    "version_code": "2.1",
+    "update_date": "2020-03-30 20：42",
+    "update_url": "https://github.com/Pois0nBreads/UnYoungModel4Bili/releases/download/v1.1/net.pois0nbread.unyoungmodel4bili_V1.1_Beta.apk",
+    "update_text": "修复了配置储存和设置按钮跳转错误的问题 （因为涉及配置储存 建议更新后清除插件数据）XD",
+    "version_type": "beta",
+    "downloadURLs": [
+        {
+            "download_Info": "蓝奏云（推荐）",
+            "download_URL": ""
+        },
+        {
+            "download_Info": "GitHub",
+            "download_URL": ""
+        }
+    ],
+    "update_log": [
+        "V1.1",
+        "V1.0"
+    ]
 }
