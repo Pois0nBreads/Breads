@@ -1,6 +1,6 @@
 {
     "last_version": "V2.1",
-    "version_code": "2.1",
+    "version_code": "2001",
     "update_date": "2020-04-19 20：42",
     "update_url": "https://github.com/Pois0nBreads/UnYoungModel4Bili/releases/download/v1.1/net.pois0nbread.unyoungmodel4bili_V1.1_Beta.apk",
     "update_text": "1.增加对安卓10的支持\n2.取消对安卓4.4的支持（API20）\n3.修复部分UI错误\n4.关闭打赏功能",
