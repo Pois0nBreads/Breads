@@ -1,20 +1,24 @@
 {
-    "last_version": "V2.0.1",
-    "version_code": "2001",
-    "update_date": "2020-04-19 21：21",
-    "update_url": "https://pois0nbread.lanzous.com/ibly3uj",
-    "update_text": "1.修复一个严重错误",
+    "last_version": "V2.2.0",
+    "version_code": "2200",
+    "update_date": "2020-07-15 12：18",
+    "update_url": "https://pois0nbread.gitee.io/breads/net.pois0nbread.unyoungmodel4bili_V2.2.0.apk",
+    "update_text": "1.修复部分错误\n2.修复氪金错误",
     "version_type": "release",
     "downloadURLs": [
         {
-            "download_Info": "蓝奏云（推荐）",
-            "download_URL": "https://pois0nbread.lanzous.com/ibly3uj"
+            "download_Info": "GitEE（推荐）",
+            "download_URL": "https://pois0nbread.gitee.io/breads/net.pois0nbread.unyoungmodel4bili_V2.2.0.apk"
         },{
             "download_Info": "GitHub",
-            "download_URL": "https://github.com/Pois0nBreads/UnYoungModel4Bili/releases/download/V2.0.1/net.pois0nbread.unyoungmodel4bili_V2.0.1.apk"
+            "download_URL": "https://github.com/Pois0nBreads/UnYoungModel4Bili/releases/download/V2.2.0/net.pois0nbread.unyoungmodel4bili_V2.2.0.apk"
+        },{
+            "download_Info": "蓝奏云",
+            "download_URL": "https://pois0nbread.lanzous.com/ijzXzemeavg"
         }
     ],
     "update_log": [
+        "更新版本：V2.2.0（Release）\n更新时间：2020-07-15 12：18\n更新内容：\n1.修复部分错误\n2.修复氪金错误",
         "更新版本：V2.0.1（Release）\n更新时间：2020-04-19 21：21\n更新内容：\n1.修复一个严重错误",
         "更新版本：V2.0（Release）\n更新时间：2020-04-19 18：00\n更新内容：\n1.增加对安卓10的支持\n2.取消对安卓4.4的支持（API20）\n3.修复部分UI错误\n4.关闭打赏功能",
         "更新版本：V1.1(Beta)\n更新时间：2020-03-30 12：49\n更新内容：\n修复了配置储存和设置按钮跳转错误的问题 （因为涉及配置储存 建议更新后清除插件数据）XD",
