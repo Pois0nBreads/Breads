@@ -19,6 +19,15 @@
 [proxy_list]
 
 # MyList
+
+(^|\.)dl\.dmhy\.org$
+(^|\.)hardforum\.com$
+(^|\.)en\.wikipedia\.org$
+(^|\.)raw\.githubusercontent\.com$
+(^|\.)companion-api\.battlefield\.com$
+(^|\.)plugins\.jetbrains\.com$
+(^|\.)pixel\.rubiconproject\.com$
+
 (^|\.)bit\.no\.com$
 (^|\.)btlibrary\.me$
 (^|\.)cccat\.io$
@@ -53,6 +62,9 @@
 
 # 国外域名关键字
 
+
+(^|\.)\w*pximg\w*\.\w*$
+(^|\.)\w*pixiv\w*\.\w*$
 (^|\.)\w*exhentai\w*\.\w*$
 (^|\.)\w*1e100\w*\.\w*$
 (^|\.)\w*abema\w*\.\w*$
