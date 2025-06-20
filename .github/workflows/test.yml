@@ -15,6 +15,7 @@ jobs:
 
       - name: Test Env
         run: |
+          env
           echo "TEST_VAR = ${{vars.TEST_VAR}}"
           echo "REPS_TEST_VAR = ${{vars.REPS_TEST_VAR}}"
           echo "TEST_SECRETS = ${{secrets.TEST_SECRETS}}"
