@@ -12,6 +12,13 @@ jobs:
           TEST_ENV: World!
           Auther: PP
           FOLDER: ./
+
+      - name: Test Env
+        run: |
+          echo "TEST_VAR = ${{vars.TEST_VAR}}"
+          echo "REPS_TEST_VAR = ${{vars.REPS_TEST_VAR}}"
+          echo "TEST_SECRETS = ${{secrets.TEST_SECRETS}}"
+          echo "REPS_TEST_SECRETS = ${{secrets.REPS_TEST_SECRETS}}"
       
       - name: Build
         run: |
