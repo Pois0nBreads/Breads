@@ -15,9 +15,9 @@ jobs:
 
       - name: Test Env
         run: |
-          echo "TEST_VAR = ${{TEST_VAR}}"
+          echo "TEST_VAR = ${{env.TEST_VAR}}"
           echo "REPS_TEST_VAR = ${{vars.REPS_TEST_VAR}}"
-          echo "TEST_SECRETS = ${{TEST_SECRETS}}"
+          echo "TEST_SECRETS = ${{env.TEST_SECRETS}}"
           echo "REPS_TEST_SECRETS = ${{secrets.REPS_TEST_SECRETS}}"
       
       - name: Build
