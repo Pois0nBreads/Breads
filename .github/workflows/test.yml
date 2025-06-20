@@ -1,7 +1,7 @@
 name: My Actions Test
 
 on:
-  pull_request
+  dynamic
 
 jobs:
   job1:
