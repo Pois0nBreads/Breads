@@ -1,0 +1,17 @@
+name: My Actions Test
+
+on:
+  pull_request
+
+jobs:
+  job1:
+    name: test-job1
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Hello
+        env:
+          TEST_ENV: World!
+          Auther: PP
+        run: |
+          echo $TEST_ENV >> test.ini
+    
