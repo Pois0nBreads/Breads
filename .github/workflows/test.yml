@@ -29,4 +29,8 @@ jobs:
       - name: Push Archive
         run:  |
           echo 'Artifact URL is ${{ steps.artifact.outputs.artifact-url }}'
-          curl --location 'https://smee.io/ry3gFROw669JIrCi' --header 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'fileurl=${{ steps.artifact.outputs.artifact-url }}'
+          curl --location 'https://smee.io/ry3gFROw669JIrCi' \
+                --header 'Authorization: ${{secrets.ACCESS_TOKEN}}' \
+                --header 'Content-Type: application/x-www-form-urlencoded' \
+                --data-urlencode 'fileurl=${{ steps.artifact.outputs.artifact-url }}'
+          
