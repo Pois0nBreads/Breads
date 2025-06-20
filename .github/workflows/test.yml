@@ -2,8 +2,11 @@ name: My Actions Test
 
 on: workflow_dispatch
 
+  
 jobs:
   build:
+    environment:
+      name: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,9 +18,9 @@ jobs:
 
       - name: Test Env
         run: |
-          echo "TEST_VAR = ${{env.TEST_VAR}}"
+          echo "TEST_VAR = ${{vars.TEST_VAR}}"
           echo "REPS_TEST_VAR = ${{vars.REPS_TEST_VAR}}"
-          echo "TEST_SECRETS = ${{env.TEST_SECRETS}}"
+          echo "TEST_SECRETS = ${{secrets.TEST_SECRETS}}"
           echo "REPS_TEST_SECRETS = ${{secrets.REPS_TEST_SECRETS}}"
       
       - name: Build
