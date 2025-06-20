@@ -3,14 +3,25 @@ name: My Actions Test
 on: workflow_dispatch
 
 jobs:
-  job1:
-    name: test-job1
-    runs-on: ubuntu-18.04
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: Hello
+      - name: Checkout
+        uses: actions/checkout@v4
         env:
           TEST_ENV: World!
           Auther: PP
           FOLDER: ./
-          BUILD_SCRIPT: $TEST_ENV >> buildtest.ini
+      
+      - name: Build
+        run: |
+          mkdir out
+          echo $TEST_ENV >> out/buildtest.ini
+          echo "Hello World!" >> out/demo.ini
+
+      - name: Archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: test
+          path: out
     
