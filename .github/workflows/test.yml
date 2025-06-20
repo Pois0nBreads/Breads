@@ -11,6 +11,6 @@ jobs:
         env:
           TEST_ENV: World!
           Auther: PP
-        run: |
-          echo $TEST_ENV >> test.ini
+          FOLDER: ./
+          BUILD_SCRIPT: $TEST_ENV >> buildtest.ini
     
